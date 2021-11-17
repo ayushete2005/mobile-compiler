@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=
+    , initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <style>
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      display: table;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .row {
+      display: table-row;
+      height: 50%;
+    }
+
+    .row:nth-child(1) {
+      background-color: #eee;
+    }
+
+    .row:nth-child(2) {
+      background-color: #ddd;
+    }
+
+    body {
+      font-family: Arial;
+      color: white;
+    }
+
+
+
+
+    .tabset>input[type="radio"] {
+      position: absolute;
+      left: -200vw;
+
+    }
+
+    .tabset .tab-panel {
+      display: none;
+    }
+
+    .tabset>input:first-child:checked~.tab-panels>.tab-panel:first-child,
+    .tabset>input:nth-child(3):checked~.tab-panels>.tab-panel:nth-child(2),
+    .tabset>input:nth-child(5):checked~.tab-panels>.tab-panel:nth-child(3),
+    .tabset>input:nth-child(7):checked~.tab-panels>.tab-panel:nth-child(4),
+    .tabset>input:nth-child(9):checked~.tab-panels>.tab-panel:nth-child(5),
+    .tabset>input:nth-child(11):checked~.tab-panels>.tab-panel:nth-child(6) {
+      display: block;
+    }
+
+    /*
+ Styling
+*/
+    body {
+      font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
+      color: #333;
+      font-weight: 300;
+    }
+
+    .tabset>label {
+      position: relative;
+      display: inline-block;
+      padding: 15px 15px 15px;
+      border: 1px solid transparent;
+      border-bottom: 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .tabset>label::after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      bottom: 10px;
+      width: 22px;
+      height: 4px;
+      background: #8d8d8d;
+    }
+
+    .tabset>label:hover,
+    .tabset>input:focus+label {
+      color: #06c;
+    }
+
+    .tabset>label:hover::after,
+    .tabset>input:focus+label::after,
+    .tabset>input:checked+label::after {
+      background: #06c;
+    }
+
+    .tabset>input:checked+label {
+      border-color: #ccc;
+      border-bottom: 1px solid #fff;
+      margin-bottom: -1px;
+    }
+
+    .tab-panel {
+      border-top: 1px solid #ccc;
+    }
+
+    /*
+ Demo purposes only
+*/
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+
+    .tabset {
+      max-width: 65em;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    div {
+      margin: 0px;
+    }
+
+    .top {
+      height: 50vh;
+      background-color: white;
+    }
+
+    .bottom {
+      height: 50vh;
+      background-color: white;
+    }
+  </style>
+  
+  <div class="top" style="z-index: 9999; position: fixed; width: 100%; border-bottom: 2px solid black;">
+    <div style="text-align: center;">
+
+      <h2 style="font-family: 'Press Start 2P', cursive; margin: 5px;">Mobile Compiler</h2>
+      <p style="margin-left: 5px; font-size: 10px; letter-spacing: 3px;">Create your own Website in mobile</p>
+    </div>
+    <div>
+      Output :
+      <div style="border-top: 2px solid black;" id="outputhtml">
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="bottom" style="margin-top: 50vh;">
+    <div class="left">
+      <div style="margin: 15px; position: sticky; text-align: center;">
+
+      </div>
+      <div class="tabset" >
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+        <label for="tab1" style="    margin-top: 10px;    padding-top: 1px;">HTML</label>
+        <!-- Tab 2 -->
+        <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+        <label for="tab2">CSS</label>
+        <!-- Tab 3 -->
+        <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+        <label for="tab3">JAVASCRIPT</label>
+        <button onclick="loadoutput()" 
+          style="height: 35px; position: fixed;margin: 0.5%;    width: 75px; cursor:pointer;     background: lawngreen;">Run ▶</button>
+
+        <div class="tab-panels">
+          <section id="marzen" class="tab-panel" style="border: none; text-align: center; height: 10000px;">
+            <textarea id="htmlinput"
+              style=" min-height:100%;max-width:100%;min-width:100%;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">&lt;!-- Write HTML code here!!! --&#62;
+  </textarea>
+
+
+          </section>
+          <section id="rauchbier" class="tab-panel" style="width: 100%; border: none; text-align: center; height: 10000px;">
+            <textarea id="CSSinput"
+              style=" min-height:100%;max-width:100%;min-width:100%;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">/* Write CSS code here!!! */
+  </textarea>
+
+          </section>
+          <section id="dunkles" class="tab-panel" style="border: none; text-align: center; height: 10000px;">
+            <textarea id="JSinput"
+              style=" text-decoration: none; min-height:100%;max-width:100%;min-width:100%; font:16px/26px Georgia, Garamond, Serif;overflow:auto;">// Write JavaScript code here!!!
+  </textarea>
+          </section>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>
+
+<script>
+  function loadoutput() {
+
+    inputhtml = document.getElementById('htmlinput').value
+    inputCSS = document.getElementById('CSSinput').value
+    inputJS = document.getElementById('JSinput').value
+    // alert(inputhtml)
+    if (inputhtml != '<!-- Write HTML code here!!! -->') {
+      output = inputhtml + '<style>' + inputCSS + '&lt;/style&#62'
+      output = output + '<script>' + inputJS + '&#60/script&#62'
+      document.getElementById('outputhtml').innerHTML = output
+    }
+    else {
+      document.getElementById('outputhtml').innerHTML = 'Output will shown here'
+    }
+  }
+// setInterval(function () { loadoutput() }, 100);
+
+
+</script>
