@@ -20,7 +20,7 @@
     }
 
     body {
-      
+      overflow: hidden;
       display: table;
       height: 100%;
       margin: 0;
@@ -154,7 +154,7 @@
     }
   </style>
 
-  <div class="top" style="z-index: 9999; width: 100%; border-bottom: 2px solid black;">
+  <div class="top" style="z-index: 9999; width: 95%; border-bottom: 2px solid black;">
     <div style="text-align: center;">
 
       <h2 style="font-family: 'Press Start 2P', cursive; margin: 5px;">Mobile Compiler</h2>
@@ -175,7 +175,7 @@
   </style>
   <div class="bottom"  class="scrollbar">
     <div class="left">
-      <div style="margin: 15px; position: sticky; text-align: center;">
+      <div style="margin: 15px; position:fixed; text-align: center;">
 
       </div>
       <div class="tabset">
@@ -184,29 +184,29 @@
         <label for="tab1" style="    margin-top: 10px;    padding-top: 1px;">HTML</label>
         <!-- Tab 2 -->
         <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
-        <label for="tab2">CSS</label>
+        <label for="tab2"style="    margin-top: 10px;    padding-top: 1px;"></label>CSS</label>
         <!-- Tab 3 -->
         <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
-        <label for="tab3">JAVASCRIPT</label>
+        <label for="tab3"style="    margin-top: 10px;    padding-top: 1px;"></label>JAVASCRIPT</label>
         <button onclick="loadoutput()"
-          style="z-index: 9999 !important; height: 35px; position: fixed;margin: 0.5%;    width: 75px; cursor:pointer;     background: lawngreen;">Run
+          style="z-index: 9999 !important; height: 35px; margin: 0.5%;    width: 75px; cursor:pointer;     background: lawngreen;">Run
           ▶</button>
 
         <div class="tab-panels">
-          <section id="marzen" class="tab-panel" style="border: none; text-align: center; height: 38vh;">
+          <section id="marzen" class="tab-panel" style="border: none; text-align: center; height: 35vh;">
             <textarea id="htmlinput"
               style=" min-height:100%;max-width:100%;min-width:100%;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">&lt;!-- Write HTML code here!!! --&#62;</textarea>
 
 
           </section>
           <section id="rauchbier" class="tab-panel"
-            style="width: 100%; border: none; text-align: center; height: 10000px;">
+            style="width: 100%; border: none; text-align: center; height: 35vh;">
             <textarea id="CSSinput"
               style=" min-height:100%;max-width:100%;min-width:100%;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">/* Write CSS code here!!! */
   </textarea>
 
           </section>
-          <section id="dunkles" class="tab-panel" style="border: none; text-align: center; height: 10000px;">
+          <section id="dunkles" class="tab-panel" style="border: none; text-align: center; height: 35vh;">
             <textarea id="JSinput"
               style=" text-decoration: none; min-height:100%;max-width:100%;min-width:100%; font:16px/26px Georgia, Garamond, Serif;overflow:auto;">// Write JavaScript code here!!!
   </textarea>
