@@ -20,6 +20,7 @@
     }
 
     body {
+      overflow: hidden;
       display: table;
       height: 100%;
       margin: 0;
@@ -152,27 +153,32 @@
       background-color: white;
     }
   </style>
-  
-  <div class="top" style="z-index: 9999; position: fixed; width: 100%; border-bottom: 2px solid black;">
+
+  <div class="top" style="z-index: 9999; width: 100%; border-bottom: 2px solid black;">
     <div style="text-align: center;">
 
       <h2 style="font-family: 'Press Start 2P', cursive; margin: 5px;">Mobile Compiler</h2>
       <p style="margin-left: 5px; font-size: 10px; letter-spacing: 3px;">Create your own Website in mobile</p>
+      
     </div>
-    <div>
+    <div style='overflow: auto; margin-bottom: 60px;overflow-x: hidden;   height: -webkit-fill-available;'>
       Output :
-      <div style="border-top: 2px solid black;" id="outputhtml">
+      <div style="border-top: 2px solid black; " id="outputhtml">
 
       </div>
     </div>
   </div>
-  
-  <div class="bottom" style="margin-top: 50vh;">
+  <style>
+    #scrollbar::-webkit-scrollbar {
+      width: 20px;
+    }
+  </style>
+  <div class="bottom"  class="scrollbar">
     <div class="left">
       <div style="margin: 15px; position: sticky; text-align: center;">
 
       </div>
-      <div class="tabset" >
+      <div class="tabset">
         <!-- Tab 1 -->
         <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
         <label for="tab1" style="    margin-top: 10px;    padding-top: 1px;">HTML</label>
@@ -182,18 +188,19 @@
         <!-- Tab 3 -->
         <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
         <label for="tab3">JAVASCRIPT</label>
-        <button onclick="loadoutput()" 
-          style="height: 35px; position: fixed;margin: 0.5%;    width: 75px; cursor:pointer;     background: lawngreen;">Run ▶</button>
+        <button onclick="loadoutput()"
+          style="z-index: 9999 !important; height: 35px; position: fixed;margin: 0.5%;    width: 75px; cursor:pointer;     background: lawngreen;">Run
+          ▶</button>
 
         <div class="tab-panels">
-          <section id="marzen" class="tab-panel" style="border: none; text-align: center; height: 10000px;">
+          <section id="marzen" class="tab-panel" style="border: none; text-align: center; height: 38vh;">
             <textarea id="htmlinput"
-              style=" min-height:100%;max-width:100%;min-width:100%;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">&lt;!-- Write HTML code here!!! --&#62;
-  </textarea>
+              style=" min-height:100%;max-width:100%;min-width:100%;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">&lt;!-- Write HTML code here!!! --&#62;</textarea>
 
 
           </section>
-          <section id="rauchbier" class="tab-panel" style="width: 100%; border: none; text-align: center; height: 10000px;">
+          <section id="rauchbier" class="tab-panel"
+            style="width: 100%; border: none; text-align: center; height: 10000px;">
             <textarea id="CSSinput"
               style=" min-height:100%;max-width:100%;min-width:100%;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">/* Write CSS code here!!! */
   </textarea>
@@ -210,7 +217,6 @@
 
     </div>
   </div>
-
 
 </body>
 
@@ -229,7 +235,7 @@
       document.getElementById('outputhtml').innerHTML = output
     }
     else {
-      document.getElementById('outputhtml').innerHTML = 'Output will shown here'
+      document.getElementById('outputhtml').innerHTML = 'Output will shown here Lorem ipsum dolor sit ametunt amet temporibus maxime voluptaonsectetur adipisicing elit.Nesciunt amet temporibus maxime voluptaonsectetur adipisicing elit.Nesciunt amet temporibus maxime voluptaonsectetur adipisicing elit.Nesciunt amet temporibus maxime voluptaonsectetur adipisicing elit.Nesciunt amet temporibus maxime voluptaonsectetur adipisicing elit.Nesciunt amet temporibus maxime voluptatem veritatis itaque eligendi libero ipsam, vitae eius ipsum quam quod aut ea suscipit possimus molestias distinctio ad ? Ipsum doloremque rerum, soluta minima qui autem commodi repellat iure beatae culpa numquam sint voluptates perspiciatis debitis, architecto temporibus, facere doloribus praesentium! Reiciendis enim exercitationem dolores eius ? Neque temporibus repellendus vitae, quod ipsa aperiam ut officiis unde optio voluptatem soluta dolor quam similique non porro atque eius.Cupiditate quo rem sit aut eveniet nihil placeat, culpa, saepe ratione, ea error ? Eligendi nobis veniam, molestiae debitis illo sed exercitationem porro nam provident animi ad fugit omnis error tenetur eveniet consectetur temporibus esse enim iusto, tempore a nesciunt modi ? Ipsa, molestiae non consectetur maiores dicta, magnam a impedit praesentium dolorum possimus velit voluptate.Obcaecati omnis ex nisi incidunt blanditiis, esse eligendi porro ? Voluptatum, in laboriosam, ipsa saepe repudiandae ea quos quis omnis tenetur doloribus labore ullam architecto repellendus porro eum blanditiis veritatis a eaque suscipit animi nostrum qui amet praesentium.Possimus eveniet voluptate nulla molestias soluta est dolores laborum quos unde.Excepturi numquam repellendus nemo autem ? Maxime voluptas possimus enim dignissimos! Quia saepe quas ipsa aliquid deserunt, laudantium delectus alias totam libero, explicabo porro cum ? Quidem eaque quos eligendi dicta aperiam harum maxime, sequi necessitatibus exercitationem ullam assumenda hic minus quo repellat, a nulla eos officia rerum labore praesentium recusandae ea accusamus nobis ? Totam eveniet minus voluptate magni maxime deserunt voluptatibus quae accusamus cum, ratione eum consequuntur amet obcaecati, quidem ex, repellat incidunt nobis magnam dolor voluptatum enim eius rem.Exercitationem rem quos quae id.Fugit rem ut doloremque minima at accusantium eum natus sed architecto ducimus sint beatae aspernatur, quia expedita rerum mollitia quibusdam veritatis voluptatibus provident perferendis neque, officia nemo voluptatum ? Laboriosam nesciunt assumenda deserunt dolores nemo quidem debitis ea, modi quis temporibus est quia quibusdam odit, ab expedita corrupti facere, vitae consequatur quod magni vero a ipsum consequuntur repellat.Alias, magni.Modi fugiat explicabo quis! Nostrum nobis nesciunt aut eligendi error eumZ'
     }
   }
 // setInterval(function () { loadoutput() }, 100);
