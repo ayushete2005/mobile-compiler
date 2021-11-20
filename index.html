@@ -224,7 +224,6 @@
 </body>
 
 </html>
-
 <script>
   function loadoutput() {
 
@@ -233,15 +232,41 @@
     inputJS = document.getElementById('JSinput').value
     // alert(inputhtml)
     if (inputhtml != '<!-- Write HTML code here!!! -->') {
-      output = inputhtml + '<style>' + inputCSS + '&lt;/style&#62'
-      output = output + '<script>' + inputJS + '&#60/script&#62'
+      output = inputhtml + '<style>' + inputCSS + '</style>'
       document.getElementById('outputhtml').innerHTML = output
+      output = output + '<script>' + inputJS + '&#60;/script&#62;'
     }
     else {
       document.getElementById('outputhtml').innerHTML = 'Output will shown here '
     }
   }
-// setInterval(function () { loadoutput() }, 100);
-
-
+  // setInterval(function () { loadoutput() }, 100);
+</script>
+<script>
+  var id = null;
+  function myMove() {
+      var elem = document.getElementById("myAnimation");
+      var pos = 0;
+      clearInterval(id);
+      id = setInterval(frame, 10);
+      function frame() {
+          if (pos == 190) {
+              id = setInterval(frame1, 10);
+              function frame1() {
+                  if (pos == 0) {
+                      clearInterval(id);
+                  }
+                  else {
+                      pos--;
+                      elem.style.top = pos + 'px';
+                      elem.style.left = pos + 'px';
+                  }
+              }
+          } else {
+              pos++;
+              elem.style.top = pos + 'px';
+              elem.style.left = pos + 'px';
+          }
+      }
+  }
 </script>
